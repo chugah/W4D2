@@ -1,0 +1,85 @@
+<h1>Sinatra Music App</h1>
+<hr/>
+
+<% if @add_user && @add_user.errors.any? %>
+  <div>
+    <ul>
+      <% @add_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+	 <div class="col-sm-offset-0 col-sm-12 col-md-offset-4 col-md-6">
+	 <h1> login</h1> 
+<% if @failed %>
+		<h2><p class="label label-warning ">     Login Failed     </p>  </h2> 
+	<%end%>
+	</div> 
+<form action="/login" method="POST">
+	 <div class="col-sm-offset-0 col-sm-12 col-md-offset-4 col-md-6">
+	<p> Name:</p> 	
+	<input type='text' name='username'>
+	<p>Passsword: </p> 
+	<input type='password' name='password'>
+	</div> 
+	 <div class="col-sm-offset-0 col-sm-12 col-md-offset-4 col-md-6">
+	<p> </p>   
+	<p> </p>   
+	<input class="btn btn-info" type='submit' name='submit' value='Submit'>
+	<a href="/register" ><button type="button" class="btn btn-info"> New User </button> </a>
+	</div> 
+</form> 
+</div> 
+
+<!--
+<h1>Login</h1>
+<hr/>
+
+<% if @add_user && @add_user.errors.any? %>
+  <div>
+    <ul>
+      <% @add_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<form method="post" action="/signup" class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="<%= @add_user && @add_user.email %>"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-1 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" value="<%= @add_user && @add_user.password %>"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+  <div >
+    <div class="col-sm-offset-1 col-sm-10">
+      <p><a href='/songs'>Back to Songs</a> </p>
+    </div>
+  </div>
+</form>
+-->

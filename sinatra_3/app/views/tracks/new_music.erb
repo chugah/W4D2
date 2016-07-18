@@ -1,0 +1,30 @@
+ <section id="portfolio">
+ </section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>New Tracks</h2>
+            <hr class="star-primary">
+        </div>
+    </div>
+    <div class="row">
+		  <% @tracks.each do |track| %>
+		  <div class="col-sm-4 portfolio-item">
+        <div class="caption">
+            <div class="caption-content">
+              <h3><%= track.title %></h3>
+					  	<h5><%= track.artist %></h5>
+					  	<p>
+					  		<video src="<%= track.url %>">
+  							Your browser does not support the <code>video</code> element.
+								</video>
+					  	</p>
+					  </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+ <section id="portfolio">
+ </section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>Tracks</h2>
+            <hr class="star-primary">
+        </div>
+    </div>
+    <div class="row">
+		  <% @tracks.each do |track| %>
+		  <div class="col-sm-4 portfolio-item">
+        <div class="caption">
+            <div class="caption-content">
+              <a href="/tracks/<%= track.id %>"><h3><%= track.title %></h3></a>
+					  	<h5><%= track.artist %></h5>
+              <h6><%= track.created_by %></h6>
+              <h6>Upvotes: <%= track.votes.count %></h6>
+					  	<p>
+					  		<video src="<%= track.url %>">
+  							Your browser does not support the <code>video</code> element.
+								</video>
+					  	</p>
+              <% if session[:user_id] %>
+                <form action="/tracks" method="post">
+                  <input type="hidden" name="track_id" value="<%= track.id %>">
+                  <input type="hidden" name="user_id" value="<%= @user.id %>">
+                  <button type="submit" class="btn btn-success btn-lg">Upvote</button>
+                </form>
+              <% end %>
+					  </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+  

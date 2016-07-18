@@ -1,0 +1,37 @@
+ <section id="portfolio">
+ </section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2><%= @track.title %></h2>
+			  	<h3><%= @track.artist %></h3>
+          <h4><%= @track.created_by %></h4>
+          <h5>Upvotes: <%= @track.votes.count %></h5>
+          <hr class="star-primary">
+        </div>
+    </div>
+	</div>
+</section>
+
+<!-- About Section -->
+<section class="success" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Reviews</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+        		<% @track.reviews.each do |review| %>
+            <div class="col-lg-4">
+              <h4><%= review.user.email %></h4>
+              </p>
+                <%= review.review_text %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</section>

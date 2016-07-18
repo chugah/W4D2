@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+	See: http://necolas.github.com/normalize.css/
+-->
+<!-- <link rel="stylesheet" href="/stylesheets/normalize.css">
+	application.css is where you put your styles
+	<link rel="stylesheet" href="/stylesheets/application.css">
+	-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/javascript/application.js"></script>
+
+	<title></title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Project name</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/music">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+	</nav>	
+	<div class="container">
+  <%= yield %>
+</div> 
+</body>
+</html>

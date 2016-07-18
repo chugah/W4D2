@@ -1,0 +1,59 @@
+ <section id="portfolio">
+ </section>
+
+ <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Add a Good Track</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                <form method="post" action="/new" id="contactForm" novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="title" name="title" required data-validation-required-message="Please enter a title.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Artist</label>
+                            <input type="text" class="form-control" placeholder="Artist" name="artist" required data-validation-required-message="Please enter an artist.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>URL</label>
+                            <input type="tel" class="form-control" placeholder="URL" name="url">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Category</label>
+                            <input type="tel" class="form-control" placeholder="Category" name="category">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <% if session[:user_id] %>
+	                    <input type="hidden" name="created_by" value="<%= @user.email %>">
+	                  <% end %>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-success btn-lg">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

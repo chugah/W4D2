@@ -1,0 +1,33 @@
+<h1> All Songs </h1>
+  <h3>
+     <a href="/songs/new">Add a song</a>
+  </h3>
+ 
+ <hr/>
+  
+<% @songs.each do |song| %>
+  <div class="song">
+    <small><%= song.id %></small><br>
+    <strong>Artist:</strong>
+    <a href="/songs/<%= song.id %>"><%= song.artist %></a>
+    <p>
+      <strong>Song:&nbsp;</strong> <%= song.title %>
+    </p>
+    <p>
+      <strong>URL:&nbsp;</strong>
+      <a href="<% song.url %>"><%= song.url %></a>
+    </p>
+    <p>
+      <strong>Created At:&nbsp; </strong><%= song.created_at %>
+    </p>
+    <p>
+      <a href="/artist/<%= song.artist %>/songs">More songs from <%= song.artist %></a>
+    </p>
+    <hr/>
+  </div>
+<% end %>
+
+<hr/>
+<a href="/songs/new">Add a song</a>
+<hr/>
+
